@@ -124,18 +124,6 @@ var restart = function(gameSpeedDiff) {
     gameSpeed *= gameSpeedDiff;
 }
 
-var isCollision = function( x, tileY) {
-    var collision = false;
-    for (enemy of allEnemies) {
-        if ( enemy.tileY === player.tileY && Math.abs(enemy.x - player.tileX * width) < 80) {
-            collision = true;
-            break;
-        }
-    }
-    return collision;
-
-}
-
 // Choose a random new row for the enemy
 var newTileY = function() {
     return Math.floor(Math.random() * 3) + 1;
